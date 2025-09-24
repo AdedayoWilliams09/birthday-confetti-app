@@ -13,22 +13,97 @@ let spawnTimer = null;
 let soundOn = false;
 
 const wishes = [
-  "Happy Birthday Adedayo 🎂","Cheers to you 🥂","Many happy returns 🎉","You are loved ❤️", "Happy Birthday Dayo mi",
-  "Dream big 💭","Smile wide 😄","Cake time 🍰","Celebrate yourself 🎊","Dance like nobody’s watching 💃",
-  "Adedayo, you rock 🎸","Happy birthday boo 🎉🎉","Happiest birthday my fweeeeeennndddddd", "Stay awesome 🆒","Keep winning 🏆","More life 🥳","Positive vibes only ✨",
-  "Be unstoppable 💪","Make today magical ✨","Have fun 🎠","Party mode ON 🎶","Glow up ✨","Stay golden 🌞",
-  "Another year of awesome!","I celebrate you today and always", "May this be your best year yet", "God will give you gifts money can't but", "Adedayo the legend 🏅","Grateful for you 🙏","Stay unique 🦄",
-  "More beautiful life 🌸","Good vibes 🔆","Wishing you success 📈","Adventure awaits 🗺️","MGL Sir", "Good health, strength, wisdom and guidance",
-  "Grow wiser 🌱","Stay kind 💗","Make memories 📸","Birthday king 🤴","Laugh loud 😂","Cheers to your new age",
-  "Treasure every moment ⏳","Dare to dream 🌌","May lines fall in pleasant places for you", "Happiness overload 🎆","Party vibes 🎈", "May Almighty God perfect all that concerns you",
-  "Stay cheerful 😍","Warm hugs 🤗","Love yourself 💕","Stay peaceful 🕊️","Enjoy the ride 🚀",
-  "Sweetest wishes 🍭","Stay grateful 🙏","Wish granted 🪄","Happy Birthday Deeone","Turn up the fun 🔊",
-  "Adedayo, we celebrate you 🎉","Celebrate love 💞","More laughter 🤣","Be happy 😊", "Success and happiness, love and laughter, peace and prosperity",
-  "Stay blessed ✝️","Be fearless 🦁","Stay humble 🌿","Make today count ✅","Radiate joy ☀️", "Keep winning bro",
-  "Create magic 🪄","Shine like gold 🏅","Love and light 🕯️","Dream & achieve 🏆", "May God bless you",
-  "Cheers to adventures ✈️","Glow brighter 💡","Birthday bliss 🌸","Stay unstoppable 🔥", "Happy birthday bro",
-  "Grateful heart 💛","Have a blast 💥","Your day, your rules 💃","You are magic ✨",
-  "Slay today 👑","Good energy only 🔆","Shine on 🌈","Be proud 🌟","Stay loved ❤️", "Good health, Success, Wealth"
+  "Happy Birthday Adedayo 🎂",
+  "Cheers to you 🥂",
+  "Many happy returns 🎉",
+  "You are loved ❤️",
+  "Happy Birthday Dayo mi",
+  "Dream big 💭",
+  "Cake time 🍰",
+  "Celebrate yourself 🎊",
+  "Adedayo, you rock 🎸",
+  "Happy birthday boo 🎉🎉",
+  "Happiest birthday my fweeeeeennndddddd",
+  "Stay awesome 🆒",
+  "Keep winning 🏆",
+  "More life 🥳",
+  "Positive vibes only ✨",
+  "Be unstoppable 💪",
+  "Make today magical ✨",
+  "Have fun 🎠",
+  "Party mode ON 🎶",
+  "Glow up ✨",
+  "Stay golden 🌞",
+  "Long life and prosperity",
+  "Wishing you the best 🎁",
+  "Live, laugh, love ❤️",
+  "To many more years 🥂",
+  "You are a star 🌟",
+  "Another year of awesome!",
+  "I celebrate you today and always",
+  "May this be your best year yet",
+  "God will give you gifts money can't buy",
+  "Adedayo the legend 🏅",
+  "Grateful for you 🙏",
+  "Stay unique 🦄",
+  "More beautiful life 🌸",
+  "Good vibes 🔆",
+  "Wishing you success 📈",
+  "Adventure awaits 🗺️",
+  "MGL Sir",
+  "Good health, strength, wisdom and guidance",
+  "Grow wiser 🌱",
+  "Stay kind 💗",
+  "Make memories 📸",
+  "Birthday king 🤴",
+  "Laugh loud 😂",
+  "Cheers to your new age",
+  "Treasure every moment ⏳",
+  "Dare to dream 🌌",
+  "May lines fall in pleasant places for you",
+  "Happiness overload 🎆",
+  "Party vibes 🎈",
+  "May Almighty God perfect all that concerns you",
+  "Stay cheerful 😍",
+  "Warm hugs 🤗",
+  "Live! Love! Enjoy and fulfill purpose. ",
+  "Love yourself 💕",
+  "Stay peaceful 🕊️",
+  "Enjoy the ride 🚀",
+  "Sweetest wishes 🍭",
+  "Stay grateful 🙏",
+  "God will grant you your heart desires 🪄",
+  "Happy Birthday Deeone",
+  "Turn up the fun 🔊",
+  "Adedayo, we celebrate you 🎉",
+  "Celebrate love 💞",
+  "More laughter 🤣",
+  "Be happy 😊",
+  "Success and happiness, love and laughter, peace and prosperity",
+  "Stay blessed ✝️",
+  "Be fearless 🦁",
+  "Make today count ✅",
+  "Radiate joy ☀️",
+  "Keep winning bro",
+  "Create magic 🪄",
+  "Shine like gold 🏅",
+  "Love and light 🕯️",
+  "Dream & achieve 🏆",
+  "May God bless you",
+  "Cheers to adventures ✈️",
+  "Glow brighter 💡",
+  "Birthday bliss 🌸",
+  "Stay unstoppable 🔥",
+  "Happy birthday bro",
+  "Grateful heart 💛",
+  "Have a blast 💥",
+  "Your day, your rules 💃",
+  "You are magic ✨",
+  "Good energy only 🔆",
+  "Shine on 🌈",
+  "Be proud 🌟",
+  "Stay loved ❤️",
+  "Good health, Success, Wealth",
 ];
 
 // 🎯 Featured wishes (special messages)
@@ -36,9 +111,9 @@ const featuredWishes = [
   "🎉 You're One of a Kind, Adedayo! 🎉",
   "✨ Another Year Wiser, Stronger, Better ✨",
   "💛 Wishing You Endless Joy & Love 💛",
- 
+
   "🎂 Cheers to Your Amazing Journey 🎂",
-  "🌟 Keep Shining, The World Needs Your Light 🌟"
+  "🌟 Keep Shining, The World Needs Your Light 🌟",
 ];
 
 function rand(min, max) {
@@ -105,7 +180,11 @@ toggleBtn.addEventListener("click", () => {
 
 soundBtn.addEventListener("click", () => {
   if (!soundOn) {
-    bgMusic.play().catch(err => console.log("Autoplay blocked, user interaction required."));
+    bgMusic
+      .play()
+      .catch((err) =>
+        console.log("Autoplay blocked, user interaction required.")
+      );
     soundBtn.textContent = "🔇";
     soundOn = true;
     centerImage.classList.add("glowing");
